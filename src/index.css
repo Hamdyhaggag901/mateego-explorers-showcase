@@ -2,95 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 37 33% 85%;
+    --foreground: 0 0% 7%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 30 38% 91%;
+    --card-foreground: 0 0% 7%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 7%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 37 36% 54%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 30 38% 91%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 37 33% 85%;
+    --muted-foreground: 0 0% 27%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 37 36% 54%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 37 36% 54%;
+    --input: 37 25% 75%;
+    --ring: 37 36% 54%;
 
-    --radius: 0.5rem;
+    --radius: 0px;
 
-    --sidebar-background: 0 0% 98%;
+    --sand: 37 33% 85%;
+    --champagne: 30 38% 91%;
+    --beige: 37 40% 75%;
+    --gold: 37 36% 54%;
+    --black: 0 0% 7%;
+    --white: 0 0% 100%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 37 33% 85%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 37 36% 54%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 30 38% 91%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 37 36% 54%;
+    --sidebar-ring: 37 36% 54%;
   }
 }
 
@@ -100,6 +58,80 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-foreground font-body antialiased;
+    font-size: 16px;
+    line-height: 1.8;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-[1280px] mx-auto px-6 md:px-8;
+  }
+
+  .section-padding {
+    @apply py-14 md:py-[100px];
+  }
+
+  .section-title {
+    @apply font-heading text-[30px] md:text-[48px] text-center leading-tight;
+  }
+
+  .gold-divider {
+    @apply w-10 h-[1px] bg-gold mx-auto mt-4 mb-8;
+  }
+
+  .label-tag {
+    @apply font-body uppercase text-[11px] tracking-[0.15em] font-bold;
+  }
+
+  .gold-cta {
+    @apply inline-block bg-gold text-white font-body uppercase text-[13px] tracking-[0.12em] font-bold px-8 py-4 transition-all duration-300 hover:bg-[hsl(37,36%,44%)];
+  }
+
+  .ghost-cta {
+    @apply inline-block border border-white text-white font-body uppercase text-[13px] tracking-[0.12em] font-bold px-8 py-4 transition-all duration-300 hover:bg-white/10;
+  }
+
+  .ghost-cta-gold {
+    @apply inline-block border border-gold text-gold font-body uppercase text-[13px] tracking-[0.12em] font-bold px-8 py-4 transition-all duration-300 hover:bg-gold hover:text-white;
+  }
+
+  .card-image-hover {
+    @apply overflow-hidden;
+  }
+
+  .card-image-hover img {
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  .card-image-hover:hover img {
+    @apply scale-[1.04];
+  }
+
+  .nav-link {
+    @apply relative font-body uppercase text-[12px] tracking-[0.12em] font-bold transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[1px] bg-gold scale-x-0 origin-left transition-transform duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply scale-x-100;
+  }
+
+  .body-muted {
+    color: #444;
+  }
+}
+
+@keyframes float-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 hsl(37 36% 54% / 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 12px hsl(37 36% 54% / 0); }
 }
