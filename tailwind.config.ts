@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         heading: ['"Cormorant Garamond"', 'serif'],
-        body: ['"Lato"', 'sans-serif'],
+        body: ['"Jost"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -27,8 +27,13 @@ export default {
         champagne: "hsl(var(--champagne))",
         beige: "hsl(var(--beige))",
         gold: "hsl(var(--gold))",
+        "gold-light": "hsl(var(--gold-light))",
         black: "hsl(var(--black))",
+        charcoal: "hsl(var(--charcoal))",
         white: "hsl(var(--white))",
+        "off-white": "hsl(var(--off-white))",
+        "text-dark": "hsl(var(--text-dark))",
+        "text-muted": "hsl(var(--text-muted))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -83,7 +88,7 @@ export default {
           to: { height: "0" },
         },
         "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(24px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },

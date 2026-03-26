@@ -4,23 +4,23 @@
 
 @layer base {
   :root {
-    --background: 37 33% 85%;
-    --foreground: 0 0% 7%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 16%;
 
     --card: 30 38% 91%;
-    --card-foreground: 0 0% 7%;
+    --card-foreground: 0 0% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
+    --popover-foreground: 0 0% 16%;
 
     --primary: 37 36% 54%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 30 38% 91%;
-    --secondary-foreground: 0 0% 7%;
+    --secondary-foreground: 0 0% 16%;
 
     --muted: 37 33% 85%;
-    --muted-foreground: 0 0% 27%;
+    --muted-foreground: 0 0% 42%;
 
     --accent: 37 36% 54%;
     --accent-foreground: 0 0% 100%;
@@ -28,7 +28,7 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 37 36% 54%;
+    --border: 37 25% 75%;
     --input: 37 25% 75%;
     --ring: 37 36% 54%;
 
@@ -38,8 +38,13 @@
     --champagne: 30 38% 91%;
     --beige: 37 40% 75%;
     --gold: 37 36% 54%;
-    --black: 0 0% 7%;
+    --gold-light: 33 50% 67%;
+    --black: 0 0% 5%;
+    --charcoal: 0 0% 11%;
     --white: 0 0% 100%;
+    --off-white: 35 33% 96%;
+    --text-dark: 0 0% 16%;
+    --text-muted: 0 0% 42%;
 
     --sidebar-background: 37 33% 85%;
     --sidebar-foreground: 0 0% 7%;
@@ -58,9 +63,10 @@
   }
 
   body {
-    @apply bg-white text-foreground font-body antialiased;
-    font-size: 16px;
-    line-height: 1.8;
+    @apply bg-white text-text-dark font-body antialiased;
+    font-size: 15px;
+    line-height: 1.85;
+    font-weight: 300;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -74,31 +80,39 @@
   }
 
   .section-padding {
-    @apply py-14 md:py-[100px];
+    @apply py-16 md:py-[120px];
   }
 
   .section-title {
-    @apply font-heading text-[30px] md:text-[48px] text-center leading-tight;
+    @apply font-heading text-[30px] md:text-[52px] leading-[1.1] font-normal;
   }
 
-  .gold-divider {
-    @apply w-10 h-[1px] bg-gold mx-auto mt-4 mb-8;
+  .gold-rule {
+    @apply w-10 h-[1px] bg-gold mt-4 mb-6;
   }
 
-  .label-tag {
-    @apply font-body uppercase text-[11px] tracking-[0.15em] font-bold;
+  .gold-rule-center {
+    @apply w-10 h-[1px] bg-gold mx-auto mt-4 mb-6;
   }
 
-  .gold-cta {
-    @apply inline-block bg-gold text-white font-body uppercase text-[13px] tracking-[0.12em] font-bold px-8 py-4 transition-all duration-300 hover:bg-[hsl(37,36%,44%)];
+  .label-caps {
+    @apply font-body uppercase text-[11px] tracking-[0.2em] font-normal text-gold;
   }
 
-  .ghost-cta {
-    @apply inline-block border border-white text-white font-body uppercase text-[13px] tracking-[0.12em] font-bold px-8 py-4 transition-all duration-300 hover:bg-white/10;
+  .btn-primary {
+    @apply inline-block bg-gold text-white font-body uppercase text-[11px] tracking-[0.2em] font-normal px-10 py-4 transition-all duration-300 hover:bg-gold-light;
   }
 
-  .ghost-cta-gold {
-    @apply inline-block border border-gold text-gold font-body uppercase text-[13px] tracking-[0.12em] font-bold px-8 py-4 transition-all duration-300 hover:bg-gold hover:text-white;
+  .btn-secondary {
+    @apply inline-block border border-gold text-gold font-body uppercase text-[11px] tracking-[0.2em] font-normal px-10 py-4 transition-all duration-300 hover:bg-gold hover:text-white;
+  }
+
+  .btn-outline-white {
+    @apply inline-block border border-white text-white font-body uppercase text-[11px] tracking-[0.2em] font-normal px-10 py-4 transition-all duration-300 hover:bg-white/10;
+  }
+
+  .gold-text-link {
+    @apply font-body uppercase text-[11px] tracking-[0.2em] font-normal text-gold hover:text-gold-light transition-colors;
   }
 
   .card-image-hover {
@@ -106,15 +120,15 @@
   }
 
   .card-image-hover img {
-    @apply transition-transform duration-500 ease-out;
+    @apply transition-transform duration-[600ms] ease-out;
   }
 
   .card-image-hover:hover img {
-    @apply scale-[1.04];
+    @apply scale-[1.03];
   }
 
   .nav-link {
-    @apply relative font-body uppercase text-[12px] tracking-[0.12em] font-bold transition-colors duration-300;
+    @apply relative font-body uppercase text-[12px] tracking-[0.15em] font-normal transition-colors duration-300;
   }
 
   .nav-link::after {
@@ -127,7 +141,7 @@
   }
 
   .body-muted {
-    color: #444;
+    @apply text-text-muted;
   }
 }
 
