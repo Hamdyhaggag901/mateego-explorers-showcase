@@ -19,7 +19,7 @@ const FadeInSection = ({ children, className = "" }: Props) => {
           observer.unobserve(el);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
     observer.observe(el);
     return () => observer.disconnect();
